@@ -1,0 +1,25 @@
+GET http://localhost:4004/odata/v4/catalog/$metadata
+
+#### 
+# '###' is for send request enablement
+GET http://localhost:4004/odata/v4/catalog/Books
+
+#comment
+###
+POST http://localhost:4004/odata/v4/catalog/Books HTTP/1.1
+Content-Type: application/json
+
+{
+    "ID": 5,
+    "title": "White Tiger",
+    "stock": 499
+}
+
+###
+PATCH http://localhost:4004/odata/v4/catalog/Books(2) HTTP/1.1
+
+Content-Type: application/json
+{
+    "title": "Jhon",
+    "stock": 499
+}
